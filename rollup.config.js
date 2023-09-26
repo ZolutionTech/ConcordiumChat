@@ -35,13 +35,13 @@ const indexConfig = {
     typescript(),
     typescriptPaths({ preserveExtensions: true }),
     terser({ output: { comments: false } }),
-    serve({
-      open: true,
-      verbose: true,
-      contentBase: ['dist'],
-      host: 'localhost',
-      port: 10001,
-    }),
+    // serve({
+    //   open: true,
+    //   verbose: true,
+    //   contentBase: ['dist'],
+    //   host: 'localhost',
+    //   port: 10001,
+    // }),
     // livereload({ watch: 'dist' }),
     /* If you want to see the live app
      */
