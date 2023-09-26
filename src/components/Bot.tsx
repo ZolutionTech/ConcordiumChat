@@ -343,6 +343,9 @@ export const Bot = (props: BotProps & { class?: string }) => {
           props.class
         }
       >
+        <div>
+          <h4>Beta</h4>
+        </div>
         <div class='flex w-full h-full justify-center'>
           <div
             style={{ 'padding-bottom': '100px' }}
