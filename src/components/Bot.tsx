@@ -343,8 +343,15 @@ export const Bot = (props: BotProps & { class?: string }) => {
           props.class
         }
       >
-        <div class='flex w-full'>
-          <h2>Beta</h2>
+        <div class='flex w-full px-3 pt-2'>
+          <h2
+            style={{
+              'font-size': '24px',
+              'font-weight': 600,
+            }}
+          >
+            Beta
+          </h2>
         </div>
         <div class='flex w-full h-full justify-center'>
           <div

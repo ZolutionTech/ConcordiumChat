@@ -53,7 +53,7 @@ export const Badge = (props: Props) => {
       Read the
       <a
         ref={liteBadge}
-        href={'https://flowiseai.com'}
+        href={'https://www.concordium.com/faq#:~:text=Concordium%20AI%20Chatbot%20Disclaimer'}
         target='_blank'
         rel='noopener noreferrer'
         class='lite-badge'
@@ -65,7 +65,7 @@ export const Badge = (props: Props) => {
       or give your
       <a
         ref={liteBadge}
-        href={'https://flowiseai.com'}
+        href={'https://forms.gle/wDPKx9HyXc5KfERH8'}
         target='_blank'
         rel='noopener noreferrer'
         class='lite-badge'
