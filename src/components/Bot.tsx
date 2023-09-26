@@ -6,7 +6,6 @@ import { BotBubble } from './bubbles/BotBubble'
 import { LoadingBubble } from './bubbles/LoadingBubble'
 import { SourceBubble } from './bubbles/SourceBubble'
 import { BotMessageTheme, TextInputTheme, UserMessageTheme } from '@/features/bubble/types'
-import { Badge } from './Badge'
 import socketIOClient from 'socket.io-client'
 import { Popup } from '@/features/popup'
 
