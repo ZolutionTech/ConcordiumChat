@@ -50,7 +50,7 @@ export const Badge = (props: Props) => {
         'background-color': props.badgeBackgroundColor ?? '#ffffff',
       }}
     >
-      Powered by
+      Read the
       <a
         ref={liteBadge}
         href={'https://flowiseai.com'}
@@ -60,7 +60,19 @@ export const Badge = (props: Props) => {
         id='lite-badge'
         style={{ 'font-weight': 'bold', color: props.poweredByTextColor ?? defaultTextColor }}
       >
-        <span> Lucas</span>
+        <span> disclaimer </span>
+      </a>
+      or give your
+      <a
+        ref={liteBadge}
+        href={'https://flowiseai.com'}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='lite-badge'
+        id='lite-badge'
+        style={{ 'font-weight': 'bold', color: props.poweredByTextColor ?? defaultTextColor }}
+      >
+        <span> feedback here</span>
       </a>
     </span>
   )

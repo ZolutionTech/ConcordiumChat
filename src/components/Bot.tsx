@@ -8,6 +8,7 @@ import { SourceBubble } from './bubbles/SourceBubble'
 import { BotMessageTheme, TextInputTheme, UserMessageTheme } from '@/features/bubble/types'
 import socketIOClient from 'socket.io-client'
 import { Popup } from '@/features/popup'
+import { Badge } from './Badge'
 
 type messageType = 'apiMessage' | 'userMessage' | 'usermessagewaiting'
 
@@ -342,8 +343,8 @@ export const Bot = (props: BotProps & { class?: string }) => {
           props.class
         }
       >
-        <div>
-          <h4>Beta</h4>
+        <div class='flex w-full'>
+          <h2>Beta</h2>
         </div>
         <div class='flex w-full h-full justify-center'>
           <div
@@ -412,7 +413,11 @@ export const Bot = (props: BotProps & { class?: string }) => {
             onSubmit={handleSubmit}
           />
         </div>
-        {/* <Badge badgeBackgroundColor={props.badgeBackgroundColor} poweredByTextColor={props.poweredByTextColor} botContainer={botContainer} /> */}
+        <Badge
+          badgeBackgroundColor={props.badgeBackgroundColor}
+          poweredByTextColor={props.poweredByTextColor}
+          botContainer={botContainer}
+        />
         <BottomSpacer ref={bottomSpacer} />
       </div>
       {sourcePopupOpen() && (
