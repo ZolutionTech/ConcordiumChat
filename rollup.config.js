@@ -9,7 +9,7 @@ import { typescriptPaths } from 'rollup-plugin-typescript-paths'
 import commonjs from '@rollup/plugin-commonjs'
 import { uglify } from 'rollup-plugin-uglify'
 import serve from 'rollup-plugin-serve'
-// import livereload from 'rollup-plugin-livereload'
+import livereload from 'rollup-plugin-livereload'
 
 const extensions = ['.ts', '.tsx']
 
@@ -41,6 +41,11 @@ const indexConfig = {
     //   contentBase: ['dist'],
     //   host: 'localhost',
     //   port: 10001,
+    //   historyApiFallback: '/web.js',
+    //   allowCrossOrigin: true,
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //   },
     // }),
     // livereload({ watch: 'dist' }),
     /* If you want to see the live app
