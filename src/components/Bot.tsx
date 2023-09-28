@@ -343,7 +343,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
           props.class
         }
       >
-        <div class='flex w-full pl-6 py-3'>
+        <div class='flex w-full pl-4 py-3'>
           <h2
             style={{
               'font-size': '20px',
@@ -357,7 +357,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
 
         <div class='flex w-full h-full justify-center'>
           <div
-            style={{ 'padding-bottom': '136px' }}
+            style={{ 'padding-bottom': '148px' }}
             ref={chatContainer}
             class='overflow-y-scroll min-w-full w-full min-h-full px-3 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth'
           >
