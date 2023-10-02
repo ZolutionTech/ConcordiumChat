@@ -9,8 +9,8 @@ export type BubbleProps = BotProps & BubbleParams
 export const Bubble = (props: BubbleProps) => {
   const [bubbleProps] = splitProps(props, ['theme'])
 
-  const [isBotOpened, setIsBotOpened] = createSignal(false)
-  const [isBotStarted, setIsBotStarted] = createSignal(false)
+  const [isBotOpened, setIsBotOpened] = createSignal(true)
+  const [isBotStarted, setIsBotStarted] = createSignal(true)
 
   const openBot = () => {
     if (!isBotStarted()) setIsBotStarted(true)
@@ -28,14 +28,20 @@ export const Bubble = (props: BubbleProps) => {
   return (
     <>
       <style>{styles}</style>
-      <BubbleButton
+      {/* <BubbleButton
         {...bubbleProps.theme?.button}
         toggleBot={toggleBot}
         isBotOpened={isBotOpened()}
-      />
+      /> */}
       <div
         part='bot'
         style={{
+          display: 'flex', // Use flexbox to center vertically and horizontally
+          'align-items': 'center', // Center vertically
+          'justify-content': 'center', // Center horizontally
+          margin: 'auto',
+          right: 0,
+          left: 0,
           height: bubbleProps.theme?.chatWindow?.height
             ? `${bubbleProps.theme?.chatWindow?.height.toString()}px`
             : 'calc(100% - 100px)',
@@ -47,9 +53,9 @@ export const Bubble = (props: BubbleProps) => {
           'z-index': 42424242,
         }}
         class={
-          `fixed sm:right-5 rounded-lg w-full sm:w-[400px] max-h-[704px]` +
+          `fixed  rounded-lg w-full sm:w-[600px] max-h-[704px]` +
           (isBotOpened() ? ' opacity-1' : ' opacity-0 pointer-events-none') +
-          (props.theme?.button?.size === 'large' ? ' bottom-24' : ' bottom-20')
+          (props.theme?.button?.size === 'large' ? ' bottom-0' : ' bottom-0')
         }
       >
         <Show when={isBotStarted()}>

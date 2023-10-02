@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-flowisechatembed-dev-151157-authRole",
+      "UnauthRoleArn": "arn:aws:iam::186873840600:role/amplify-flowisechatembed-dev-151157-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::186873840600:role/amplify-flowisechatembed-dev-151157-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-flowisechatembed-dev-151157-deployment",
+      "UnauthRoleName": "amplify-flowisechatembed-dev-151157-unauthRole",
+      "StackName": "amplify-flowisechatembed-dev-151157",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:186873840600:stack/amplify-flowisechatembed-dev-151157/9e5c3cc0-5e00-11ee-ad50-0a37f5c8836c",
+      "AmplifyAppId": "d1nm5c0iwqrmso"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  },
+  "chatframe": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-flowisechatembed-chatframe-110326-authRole",
+      "UnauthRoleArn": "arn:aws:iam::186873840600:role/amplify-flowisechatembed-chatframe-110326-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::186873840600:role/amplify-flowisechatembed-chatframe-110326-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-flowisechatembed-chatframe-110326-deployment",
+      "UnauthRoleName": "amplify-flowisechatembed-chatframe-110326-unauthRole",
+      "StackName": "amplify-flowisechatembed-chatframe-110326",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:186873840600:stack/amplify-flowisechatembed-chatframe-110326/646188a0-6039-11ee-9475-0631f447731e",
+      "AmplifyAppId": "d1nm5c0iwqrmso"
+    }
+  }
+}

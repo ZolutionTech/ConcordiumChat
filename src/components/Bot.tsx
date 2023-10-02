@@ -334,6 +334,12 @@ export const Bot = (props: BotProps & { class?: string }) => {
     return newSourceDocuments
   }
 
+  const testWebhook = async () => {
+    const result = await fetch('https://hook.eu2.make.com/tkbiyiwg97var8xd9k2ueeplj5ofunbe')
+
+    console.log(result)
+  }
+
   return (
     <>
       <div
@@ -413,6 +419,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
             </For>
           </div>
           <TextInput
+            id='chatbot-text-input'
             backgroundColor={props.textInput?.backgroundColor}
             textColor={props.textInput?.textColor}
             placeholder={props.textInput?.placeholder}
