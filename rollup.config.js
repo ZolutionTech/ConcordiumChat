@@ -35,19 +35,19 @@ const indexConfig = {
     typescript(),
     typescriptPaths({ preserveExtensions: true }),
     terser({ output: { comments: false } }),
-    // serve({
-    //   open: true,
-    //   verbose: true,
-    //   contentBase: ['dist'],
-    //   host: 'localhost',
-    //   port: 10001,
-    //   historyApiFallback: '/web.js',
-    //   allowCrossOrigin: true,
-    //   headers: {
-    //     'Access-Control-Allow-Origin': '*',
-    //   },
-    // }),
-    // livereload({ watch: 'dist' }),
+    serve({
+      open: true,
+      verbose: true,
+      contentBase: ['dist'],
+      host: 'localhost',
+      port: 10001,
+      historyApiFallback: '/web.js',
+      allowCrossOrigin: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    }),
+    livereload({ watch: 'dist' }),
     /* If you want to see the live app
      */
   ],

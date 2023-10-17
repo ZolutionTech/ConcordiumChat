@@ -1,20 +1,28 @@
-import { createSignal, Show, splitProps } from 'solid-js'
+import { createSignal, onMount, Show, splitProps } from 'solid-js'
 import styles from '../../../assets/index.css'
 import { BubbleButton } from './BubbleButton'
+
 import { BubbleParams } from '../types'
 import { Bot, BotProps } from '../../../components/Bot'
+import useIsSmallScreen from '@/utils/useIsSmallscreen'
 
 export type BubbleProps = BotProps & BubbleParams
 
 export const Bubble = (props: BubbleProps) => {
   const [bubbleProps] = splitProps(props, ['theme'])
 
+  const isSmallScreen = useIsSmallScreen()
+
   const [isBotOpened, setIsBotOpened] = createSignal(false)
   const [isBotStarted, setIsBotStarted] = createSignal(false)
 
+  onMount(() => {
+    !isSmallScreen() && openBot()
+  })
+
   const openBot = () => {
     if (!isBotStarted()) setIsBotStarted(true)
-    setIsBotOpened(true)
+    if (!isBotOpened()) setIsBotOpened(true)
   }
 
   const closeBot = () => {

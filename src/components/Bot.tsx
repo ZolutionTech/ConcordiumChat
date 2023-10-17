@@ -422,6 +422,8 @@ export const Bot = (props: BotProps & { class?: string }) => {
             onSubmit={handleSubmit}
           />
         </div>
+
+        {/* Bottom section below text input */}
         <Badge
           badgeBackgroundColor={props.badgeBackgroundColor}
           poweredByTextColor={props.poweredByTextColor}
@@ -429,6 +431,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
         />
         <BottomSpacer ref={bottomSpacer} />
       </div>
+
       {sourcePopupOpen() && (
         <Popup
           isOpen={sourcePopupOpen()}
