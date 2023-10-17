@@ -28,6 +28,11 @@
       "StackName": "amplify-flowisechatembed-chatframe-110326",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:186873840600:stack/amplify-flowisechatembed-chatframe-110326/646188a0-6039-11ee-9475-0631f447731e",
       "AmplifyAppId": "d1nm5c0iwqrmso"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
     }
   }
 }

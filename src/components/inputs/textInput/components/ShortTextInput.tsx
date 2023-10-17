@@ -14,13 +14,19 @@ export const ShortTextInput = (props: ShortTextInputProps) => {
   createEffect(() => {
     const flowise = document.querySelectorAll('flowise-chatbot')
 
-    if (flowise.length > 1) {
-      const input = flowise[1].shadowRoot?.querySelectorAll('#chatbot-text-input')
+    let root
 
-      input?.forEach((i) => {
-        i.addEventListener('input', (e: any) => {
-          props.onInput(e.target.value)
-        })
+    if (flowise.length > 1) {
+      root = flowise[1]
+    } else {
+      root = flowise[0]
+    }
+
+    if (flowise.length > 1) {
+      const input = root?.shadowRoot?.getElementById('chatbot-text-input')
+
+      input?.addEventListener('input', (e: any) => {
+        props.onInput(e.target.value)
       })
     }
 
