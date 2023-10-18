@@ -41,6 +41,11 @@
       "StackName": "amplify-flowisechatembed-concdev-111000",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:186873840600:stack/amplify-flowisechatembed-concdev-111000/1fba7760-6d96-11ee-8a77-025043b5b274",
       "AmplifyAppId": "d1nm5c0iwqrmso"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
     }
   }
 }

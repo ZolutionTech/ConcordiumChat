@@ -5,10 +5,7 @@ import { createSignal, onCleanup, onMount, Show } from 'solid-js'
 
 export type FullProps = BotProps & BubbleParams
 
-export const Full = (
-  props: FullProps,
-  { element }: { element: HTMLElement }
-) => {
+export const Full = (props: FullProps, { element }: { element: HTMLElement }) => {
   const [isBotDisplayed, setIsBotDisplayed] = createSignal(false)
 
   const launchBot = () => {
@@ -16,8 +13,7 @@ export const Full = (
   }
 
   const botLauncherObserver = new IntersectionObserver((intersections) => {
-    if (intersections.some((intersection) => intersection.isIntersecting))
-      launchBot()
+    if (intersections.some((intersection) => intersection.isIntersecting)) launchBot()
   })
 
   onMount(() => {
@@ -30,16 +26,18 @@ export const Full = (
 
   return (
     <>
-      <style>
-        {styles}
-      </style>
+      <style>{styles}</style>
       <Show when={isBotDisplayed()}>
         <div
           style={{
             'background-color': props.theme?.chatWindow?.backgroundColor || '#ffffff',
-            'height': props.theme?.chatWindow?.height ? `${props.theme?.chatWindow?.height.toString()}px` : '100vh',
-            'width': props.theme?.chatWindow?.width ? `${props.theme?.chatWindow?.width.toString()}px` : '100%',
-            'margin': '0px'
+            height: props.theme?.chatWindow?.height
+              ? `${props.theme?.chatWindow?.height.toString()}px`
+              : '100vh',
+            width: props.theme?.chatWindow?.width
+              ? `${props.theme?.chatWindow?.width.toString()}px`
+              : '100%',
+            margin: '0px',
           }}
         >
           <Bot
@@ -52,7 +50,8 @@ export const Full = (
             fontSize={props.theme?.chatWindow?.fontSize}
             chatflowid={props.chatflowid}
             chatflowConfig={props.chatflowConfig}
-            apiHost={props.apiHost} />
+            apiHost={props.apiHost}
+          />
         </div>
       </Show>
     </>

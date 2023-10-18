@@ -29,7 +29,7 @@ export type BotProps = {
   poweredByTextColor?: string
   badgeBackgroundColor?: string
   fontSize?: number
-  toggleBot: () => void
+  toggleBot?: () => void
 }
 
 const defaultWelcomeMessage = 'Hi there! How can I help?'
@@ -343,7 +343,11 @@ export const Bot = (props: BotProps & { class?: string }) => {
           'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' +
           props.class
         }
+        style={{
+          'z-index': 42424242,
+        }}
       >
+        {/* Top bar  */}
         <div class='flex w-full px-4 py-3 justify-between '>
           <h2
             style={{
@@ -357,8 +361,8 @@ export const Bot = (props: BotProps & { class?: string }) => {
 
           <button
             part='button'
-            onClick={() => props.toggleBot()}
-            class={`w-6 h-6  shadow-md rounded-full hover:scale-110 active:scale-95 transition-transform duration-200 flex justify-center items-center animate-fade-in`}
+            onClick={() => props.toggleBot?.()}
+            class={`w-7 h-7  shadow-md rounded-full hover:scale-110 active:scale-95 transition-transform duration-200 flex justify-center items-center animate-fade-in`}
           >
             <svg
               viewBox='0 0 24 24'
@@ -371,6 +375,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
           </button>
         </div>
 
+        {/* Chat window */}
         <div class='flex w-full h-full justify-center'>
           <div
             style={{ 'padding-bottom': '148px' }}

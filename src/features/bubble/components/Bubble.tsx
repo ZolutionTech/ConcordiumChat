@@ -23,10 +23,14 @@ export const Bubble = (props: BubbleProps) => {
   const openBot = () => {
     if (!isBotStarted()) setIsBotStarted(true)
     if (!isBotOpened()) setIsBotOpened(true)
+    if (isSmallScreen()) document.body.style.maxHeight = '100vh'
+
+    console.log(document.body.style.maxHeight)
   }
 
   const closeBot = () => {
     setIsBotOpened(false)
+    if (isSmallScreen()) document.body.style.maxHeight = 'none'
   }
 
   const toggleBot = () => {

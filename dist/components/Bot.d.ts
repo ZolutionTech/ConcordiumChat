@@ -16,7 +16,7 @@ export type BotProps = {
     poweredByTextColor?: string;
     badgeBackgroundColor?: string;
     fontSize?: number;
-    toggleBot: () => void;
+    toggleBot?: () => void;
 };
 export declare const Bot: (props: BotProps & {
     class?: string;
