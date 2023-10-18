@@ -9,6 +9,7 @@ import { BotMessageTheme, TextInputTheme, UserMessageTheme } from '@/features/bu
 import socketIOClient from 'socket.io-client'
 import { Popup } from '@/features/popup'
 import { Badge } from './Badge'
+import useIsSmallScreen from '@/utils/useIsSmallscreen'
 
 type messageType = 'apiMessage' | 'userMessage' | 'usermessagewaiting'
 
@@ -29,6 +30,7 @@ export type BotProps = {
   poweredByTextColor?: string
   badgeBackgroundColor?: string
   fontSize?: number
+  toggleBot: () => void
 }
 
 const defaultWelcomeMessage = 'Hi there! How can I help?'
@@ -130,6 +132,8 @@ export const Bot = (props: BotProps & { class?: string }) => {
   )
   const [socketIOClientId, setSocketIOClientId] = createSignal('')
   const [isChatFlowAvailableToStream, setIsChatFlowAvailableToStream] = createSignal(false)
+
+  const isSmallScreen = useIsSmallScreen()
 
   onMount(() => {
     if (!bottomSpacer) return
@@ -343,7 +347,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
           props.class
         }
       >
-        <div class='flex w-full pl-4 py-3'>
+        <div class='flex w-full px-4 py-3 justify-between '>
           <h2
             style={{
               'font-size': '20px',
@@ -353,6 +357,21 @@ export const Bot = (props: BotProps & { class?: string }) => {
           >
             Beta
           </h2>
+
+          <button
+            part='button'
+            onClick={() => props.toggleBot()}
+            class={`w-6 h-6  shadow-md rounded-full hover:scale-110 active:scale-95 transition-transform duration-200 flex justify-center items-center animate-fade-in`}
+          >
+            <svg
+              viewBox='0 0 24 24'
+              style={{ fill: '#303235' }}
+              class='absolute duration-200 transition w-3 h-3'
+            >
+              <line x1='0' y1='0' x2='24' y2='24' stroke='#333' stroke-width='2' />
+              <line x1='0' y1='24' x2='24' y2='0' stroke='#333' stroke-width='2' />
+            </svg>
+          </button>
         </div>
 
         <div class='flex w-full h-full justify-center'>
