@@ -11,5 +11,23 @@
       "StackId": "arn:aws:cloudformation:ap-southeast-1:186873840600:stack/amplify-flowisechatembed-dev-151157/9e5c3cc0-5e00-11ee-ad50-0a37f5c8836c",
       "AmplifyAppId": "d1nm5c0iwqrmso"
     }
+  },
+  "concprod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-flowisechatembed-concprod-110142-authRole",
+      "UnauthRoleArn": "arn:aws:iam::186873840600:role/amplify-flowisechatembed-concprod-110142-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::186873840600:role/amplify-flowisechatembed-concprod-110142-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-flowisechatembed-concprod-110142-deployment",
+      "UnauthRoleName": "amplify-flowisechatembed-concprod-110142-unauthRole",
+      "StackName": "amplify-flowisechatembed-concprod-110142",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:186873840600:stack/amplify-flowisechatembed-concprod-110142/f7640a20-6d94-11ee-a0ac-02ebe51b26a8",
+      "AmplifyAppId": "d1nm5c0iwqrmso"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
   }
 }
