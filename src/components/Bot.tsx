@@ -9,7 +9,6 @@ import { BotMessageTheme, TextInputTheme, UserMessageTheme } from '@/features/bu
 import socketIOClient from 'socket.io-client'
 import { Popup } from '@/features/popup'
 import { Badge } from './Badge'
-import useIsSmallScreen from '@/utils/useIsSmallscreen'
 
 type messageType = 'apiMessage' | 'userMessage' | 'usermessagewaiting'
 
@@ -132,8 +131,6 @@ export const Bot = (props: BotProps & { class?: string }) => {
   )
   const [socketIOClientId, setSocketIOClientId] = createSignal('')
   const [isChatFlowAvailableToStream, setIsChatFlowAvailableToStream] = createSignal(false)
-
-  const isSmallScreen = useIsSmallScreen()
 
   onMount(() => {
     if (!bottomSpacer) return
