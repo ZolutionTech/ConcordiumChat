@@ -54,7 +54,7 @@ export const TextInput = (props: Props) => {
 
         isKeyboardOnTop &&
           window.scrollBy({
-            top: 250,
+            top: 270,
             behavior: 'smooth',
           })
       }, 100)
