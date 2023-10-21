@@ -1,5 +1,5 @@
 import styles from '../../../assets/index.css'
-import { Bot, BotProps } from '@/components/Bot'
+import { WebBot, BotProps } from '@/components/WebBot'
 import { BubbleParams } from '@/features/bubble/types'
 import { createSignal, onCleanup, onMount, Show } from 'solid-js'
 
@@ -40,7 +40,7 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
             margin: '0px',
           }}
         >
-          <Bot
+          <WebBot
             badgeBackgroundColor={props.theme?.chatWindow?.backgroundColor}
             welcomeMessage={props.theme?.chatWindow?.welcomeMessage}
             poweredByTextColor={props.theme?.chatWindow?.poweredByTextColor}

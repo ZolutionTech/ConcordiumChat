@@ -10,4 +10,5 @@ export declare const sendRequest: <ResponseData>(params: {
     data?: ResponseData | undefined;
     error?: Error | undefined;
 }>;
+export declare const getShadowRoot: () => ShadowRoot | null;
 //# sourceMappingURL=index.d.ts.map
