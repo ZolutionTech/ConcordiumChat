@@ -43,7 +43,12 @@ export const TextInput = (props: Props) => {
   }
 
   onMount(() => {
-    if (inputRef) inputRef.focus()
+    if (inputRef) {
+      inputRef.focus()
+      if (isSmallScreen()) {
+        inputRef.blur()
+      }
+    }
   })
 
   const onFocus = (event: FocusEvent) => {

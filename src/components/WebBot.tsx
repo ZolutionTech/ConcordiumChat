@@ -118,8 +118,13 @@ export const WebBot = (props: BotProps & { class?: string }) => {
         }}
       >
         {/* Top bar  */}
-        <div class='flex w-full px-4 py-3 justify-between '>
-          <h2
+        <div
+          class='absolute right-2 top-2 '
+          style={{
+            'z-index': 42424242,
+          }}
+        >
+          {/* <h2
             style={{
               'font-size': '20px',
               'font-weight': 600,
@@ -127,7 +132,7 @@ export const WebBot = (props: BotProps & { class?: string }) => {
             }}
           >
             Beta
-          </h2>
+          </h2> */}
 
           <button
             part='button'

@@ -5,7 +5,6 @@ import { BubbleButton } from './BubbleButton'
 import { BubbleParams } from '../types'
 import { WebBot, BotProps } from '../../../components/WebBot'
 import useIsSmallScreen from '@/utils/useIsSmallScreen'
-import MobileBot from '@/components/MobileBot'
 
 export type BubbleProps = BotProps & BubbleParams
 
@@ -19,9 +18,46 @@ export const Bubble = (props: BubbleProps) => {
   const [isBotStarted, setIsBotStarted] = createSignal(false)
 
   onMount(() => {
-    !isSmallScreen() && openBot()
-    document.querySelector('.w-webflow-badge')?.remove() // Removes Webflow badge
+    handleOnMount()
   })
+
+  const handleOnMount = () => {
+    document.querySelector('.w-webflow-badge')?.remove() // Removes Webflow badge
+
+    if (isSmallScreen()) return
+
+    const hasBotBeenOpened = localStorage.getItem('isBotOpened')
+
+    if (hasBotBeenOpened) {
+      const { isBotOpened, time } = JSON.parse(hasBotBeenOpened)
+
+      if (isBotOpened) {
+        const now = new Date().getTime()
+        const diff = now - time
+
+        // if more than 30 minutes, open
+        if (diff > 1000 * 60 * 30) {
+          openBot()
+          localStorage.setItem(
+            'isBotOpened',
+            JSON.stringify({
+              isBotOpened: true,
+              time: new Date().getTime(),
+            })
+          )
+        }
+      }
+    } else {
+      openBot()
+      localStorage.setItem(
+        'isBotOpened',
+        JSON.stringify({
+          isBotOpened: true,
+          time: new Date().getTime(),
+        })
+      )
+    }
+  }
 
   const openBot = () => {
     if (!isBotStarted()) setIsBotStarted(true)
