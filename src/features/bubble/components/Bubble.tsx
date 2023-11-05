@@ -104,7 +104,8 @@ export const Bubble = (props: BubbleProps) => {
           bottom: isSmallScreen() ? '0' : '100px',
           transform: isBotOpened() ? 'scale3d(1, 1, 1)' : 'scale3d(0, 0, 1)',
 
-          transition: 'transform 200ms cubic-bezier(0, 1.2, 1, 1), opacity 150ms ease-out',
+          transition:
+            'transform 200ms cubic-bezier(0, 1.2, 1, 1), opacity 150ms ease-out, height 250ms ease-out',
           'transform-origin': 'bottom right',
           'box-shadow': 'rgb(0 0 0 / 16%) 0px 5px 40px',
           'background-color': bubbleProps.theme?.chatWindow?.backgroundColor || '#ffffff',

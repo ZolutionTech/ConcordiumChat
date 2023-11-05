@@ -239,7 +239,7 @@ const ChatContainer = (props: BotProps) => {
 
   return (
     <>
-      <div class='flex w-full h-full justify-center '>
+      <div id='chat-container' class='flex w-full h-full justify-center '>
         <div
           style={{ 'padding-bottom': '148px' }}
           ref={chatContainer}

@@ -1,5 +1,6 @@
 import { ShortTextInput } from './ShortTextInput'
 import { SendButton } from '@/components/SendButton'
+import { getShadowRoot } from '@/utils'
 // import { getShadowRoot } from '@/utils'
 import useIsSmallScreen from '@/utils/useIsSmallScreen'
 import { createSignal, onMount } from 'solid-js'
@@ -21,6 +22,7 @@ const defaultTextColor = '#303235'
 export const TextInput = (props: Props) => {
   const [inputValue, setInputValue] = createSignal(props.defaultValue ?? '')
   let inputRef: HTMLInputElement | HTMLTextAreaElement | undefined
+  let inputContainerRef: HTMLDivElement | undefined
 
   const handleInput = (inputValue: string) => setInputValue(inputValue)
 
@@ -57,6 +59,13 @@ export const TextInput = (props: Props) => {
       setTimeout(() => {
         const isKeyboardOnTop = window.scrollY === 0
 
+        const root = getShadowRoot()
+
+        if (root) {
+          const botContainer = root.getElementById('chat-container')
+          if (botContainer) botContainer.style.height = 'calc(100% -  270px)'
+        }
+
         isKeyboardOnTop &&
           window.scrollBy({
             top: 270,
@@ -66,8 +75,27 @@ export const TextInput = (props: Props) => {
     }
   }
 
+  const onBlur = (event: FocusEvent) => {
+    // Scroll to bottom on mobile. The container id is 'bot-container'
+    if (isSmallScreen()) {
+      setTimeout(() => {
+        const root = getShadowRoot()
+
+        if (root) {
+          const botContainer = root.getElementById('chat-container')
+          if (botContainer) botContainer.style.height = 'calc(100%)'
+        }
+
+        // if (inputContainerRef) {
+        //   inputContainerRef.style.transform = 'translateY(0px)'
+        // }
+      }, 100)
+    }
+  }
+
   return (
     <div
+      ref={inputContainerRef}
       class={'flex items-end justify-between chatbot-input'}
       data-testid='input'
       style={{
@@ -77,6 +105,7 @@ export const TextInput = (props: Props) => {
         right: '20px',
         bottom: '40px',
         margin: 'auto',
+        transition: 'transform 200ms ease-in-out, opacity 150ms ease-out',
         'z-index': 1000,
         'background-color': props.backgroundColor ?? defaultBackgroundColor,
         color: props.textColor ?? defaultTextColor,
@@ -90,6 +119,7 @@ export const TextInput = (props: Props) => {
         fontSize={props.fontSize}
         placeholder={props.placeholder ?? 'Type your question'}
         onFocus={onFocus}
+        onBlur={onBlur}
       />
       <SendButton
         sendButtonColor={props.sendButtonColor}
