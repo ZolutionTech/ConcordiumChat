@@ -1,2 +1,2 @@
-export type { BotProps } from './components/Bot'
+export type { BotProps } from './components/WebBot'
 export type { BubbleProps } from './features/bubble/components/Bubble'
